@@ -45,7 +45,7 @@ public class MoveToObject : MonoBehaviour
             if(other.gameObject.name == pathpoint[currentpathIndex].name) // vi sammenligner navne fra vores gameobject med vores første index i arrayet
         {
 
-                transform.position = pathpoint[currentpathIndex].transform.position;
+                transform.position = pathpoint[currentpathIndex].transform.position; //vi sætter vores position til vores waypoint
                 currentpathIndex++; // tæller +1 frem i arrayet
 			if(currentpathIndex >= pathpoint.Length)
 			{
@@ -63,9 +63,17 @@ public class MoveToObject : MonoBehaviour
                 
         }
            
+	
+
 
         }
 
-	
+	void SetPathPoints(GameObject[] inputpathPoint)
+	{
+
+
+		pathpoint = inputpathPoint;
+
+	}
 	
 }

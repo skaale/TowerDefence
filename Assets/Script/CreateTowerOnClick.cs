@@ -1,33 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreateTowerOnClick : MonoBehaviour 
+public class CreateTowerOnClick : MonoBehaviour
 {
+    public int NumberOfInstantiatedTowers {get; private set;}
 
-    public GameObject tower;
-    void Clicked(Vector3 position)
+    public int allowedNumberOfTowers = 3;
+    public TowerSelector towerselector;
+
+    public GameObject defaultTowerPrefab;
+	void Clicked(Vector3 position)
     {
-
-
-
-      Instantiate(tower, position + Vector3.up * 0.5f, tower.transform.rotation);
-
-
-
+        if (NumberOfInstantiatedTowers < allowedNumberOfTowers)
+        {
+            GameObject towerPrefabToUse;
+            Debug.Log(towerselector);
+            Debug.Log(towerselector.name);
+            if (towerselector == null)
+                towerPrefabToUse = defaultTowerPrefab;
+            else
+                towerPrefabToUse = towerselector.GetSelectedTower();
+            Instantiate(towerPrefabToUse, position + Vector3.up * 0.5f, towerPrefabToUse.transform.rotation);
+            ++NumberOfInstantiatedTowers;
+        }
     }
     
     
     
     
     
-    
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+ 
 }

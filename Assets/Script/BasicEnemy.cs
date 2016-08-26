@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BasicEnemy : MonoBehaviour {
-
+    public GameObject deathListener;
 	public int health = 10;
 
 
@@ -38,6 +38,10 @@ public class BasicEnemy : MonoBehaviour {
 	
 	}
 
-
+    void OnDestroy()
+    {
+        if (deathListener != null)
+            deathListener.SendMessage("OnEnemyDied", this);
+    }
 
 }

@@ -14,10 +14,11 @@ public class CastleHealth : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter(Collision collision)
-	{
+	void OnTriggerEnter(Collider other )
+    {
+        Debug.Log(other.gameObject.tag);
 
-		if (collision.collider.tag == "Enemy" )
+        if (other.gameObject.tag == "Enemy")
 		{
 			Debug.Log(tag);
 			health--; // hver gang vi rammer en enemy trækker 1 point fra fuld health på 10 

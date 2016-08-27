@@ -32,15 +32,15 @@ public class MoveToObject : MonoBehaviour
        
 
         // Movement
-        //transform.position += movementdirection * speed * Time.deltaTime; // hvert sekundt 
+        transform.position += movementdirection * speed * Time.deltaTime; // hvert sekundt 
 
         
     }
 
-    void FixedUpdate()
-    {
-        attachedRigidBody.MovePosition(transform.position + movementdirection * speed * Time.deltaTime);
-    }
+    //void FixedUpdate()
+    //{
+    //    attachedRigidBody.MovePosition(transform.position + movementdirection * speed * Time.deltaTime);
+    //}
 
     void OnTriggerEnter(Collider other)
     {

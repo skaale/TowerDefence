@@ -5,7 +5,7 @@ public class CreateTowerOnClick : MonoBehaviour
 {
     public int NumberOfInstantiatedTowers {get; private set;}
 
-    public int allowedNumberOfTowers = 3;
+    public int allowedNumberOfTowers;
     public TowerSelector towerselector;
 
     public GameObject defaultTowerPrefab;

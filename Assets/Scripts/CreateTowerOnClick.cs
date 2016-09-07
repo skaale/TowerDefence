@@ -19,10 +19,12 @@ public class CreateTowerOnClick : MonoBehaviour
             if (towerselector == null)
                 towerPrefabToUse = defaultTowerPrefab;
             else
-                towerPrefabToUse = towerselector.GetSelectedTower();
+            towerPrefabToUse = towerselector.GetSelectedTower();
             Instantiate(towerPrefabToUse, position + Vector3.up * 0.5f, towerPrefabToUse.transform.rotation);
             ++NumberOfInstantiatedTowers;
         }
+
+
     }
     
     

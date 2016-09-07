@@ -14,7 +14,7 @@ public class CastleHealth : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider other )
+    void OnTriggerEnter(Collider other) 
     {
         Debug.Log(other.gameObject.tag);
 

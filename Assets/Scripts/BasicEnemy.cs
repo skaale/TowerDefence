@@ -31,7 +31,7 @@ public class BasicEnemy : MonoBehaviour {
 		if(health <= 0)
 		{
 
-			Destroy(gameObject);
+			Destroy(gameObject); // Når health når 0 , fjener vi vores gameObject
 
 		}
 
@@ -41,7 +41,7 @@ public class BasicEnemy : MonoBehaviour {
     void OnDestroy()
     {
         if (deathListener != null)
-            deathListener.SendMessage("OnEnemyDied", this);
+            deathListener.SendMessage("OnEnemyDied", this); // vi lytter til den sidste gameobject der bliver destroyed
     }
 
 }

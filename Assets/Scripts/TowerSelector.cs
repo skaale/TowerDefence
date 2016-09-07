@@ -9,7 +9,7 @@ public class TowerSelector : MonoBehaviour {
     public TowerSelector towerselector;
 	public float towerIconRotateRate = 1.0f;
 	
-	private int selectedTower = 0;
+	public int selectedTower = 0;
     public GameObject defaultTowerPrefab;
 	// Use this for initialization
 	void Start ()
@@ -28,7 +28,7 @@ public class TowerSelector : MonoBehaviour {
 
         }else
         {
-            Debug.Log(selectedTower + "; " + towerIcons.Length);
+            //Debug.Log(selectedTower + "; " + towerIcons.Length);
             towerIcons[selectedTower].transform.Rotate(Vector3.up, towerIconRotateRate * Time.deltaTime);
         }
        

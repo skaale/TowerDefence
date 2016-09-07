@@ -7,7 +7,7 @@ public class WaveSpawner : MonoBehaviour {
     public CreateTowerOnClick towerCreator;
     public Button startWaveButton;
     public Text currentWaveText;
-
+    public TowerSelector towerSelector;
     List<EnemySpawner> Spawners = new List<EnemySpawner>();
     int CurrentWave = 0;
     
@@ -51,6 +51,7 @@ public class WaveSpawner : MonoBehaviour {
     public void WaveEnded()
     {
         Spawners[CurrentWave].enabled = false;
+        
 
         if (CurrentWave + 1 < Spawners.Count)
         {
@@ -58,6 +59,7 @@ public class WaveSpawner : MonoBehaviour {
             currentWaveText.text = CurrentWave + "";
             startWaveButton.interactable = true;
             UpdateNumberOfAllowedTowers();
+           
         }
     }
     #endregion
